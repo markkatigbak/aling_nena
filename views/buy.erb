@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>All Products : Aling Nena </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/admin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Aling Nena</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/about">About</a></li>
+            <li class="active"><a href="/products">All Products</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="admin">
+        <h1><center> Purchase: <%= @product.name %> </center> </h1>
+        <p>
+        <form role="form" method="POST" action="/checkout">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="name" class="col-sm-2 control-label">Quantity</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="quantity" placeholder="Enter quantity desired">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="price" class="col-sm-2 control-label">Enter Payment</label>
+				 <br></br>
+           <div class="col-md-3 col-md-offset-3">
+			      	<label>Thousands</label>
+		            <input type="text" class="form-control" name="thousands" placeholder="Thousand Bills" value="0">
+		            <br/>
+		            <label>Five Hundreds</label>
+		            <input type="text" class="form-control" name="five_hundreds" placeholder="Five Hundred Bills" value="0">
+		            <br/>
+		            <label>Hundreds</label>
+		            <input type="text" class="form-control" name="hundreds" placeholder="Hundred Bills" value="0">
+		            <br/>
+		            <label>Fifties</label>
+		            <input type="text" class="form-control" name="fifties" placeholder="Fifty Bills" value="0">
+		        	</br>	
+		        	<label>Twenties</label>
+		            <input type="text" class="form-control" name="twenties" placeholder="Twenty Bills" value="0">
+		            <br/>
+		            <label>Tens</label>
+		            <input type="text" class="form-control" name="tens" placeholder="Ten Peso Coins" value="0">
+		            <br/>
+		            <label>Fives</label>
+		            <input type="text" class="form-control" name="fives" placeholder="Five Peso Coins" value="0">
+					<br/>
+					<label>Ones</label>
+					<input type="text" class="form-control" name="ones" placeholder="One Peso Coins" value="0">
+					<br/>
+		            </div>
+            </div>
+            <center>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-9">
+                <button type="submit" class="btn btn-default btn-danger"> Proceed to Checkout </button>
+                <a href="/products" class="btn btn-default">Back to Product List</a>
+              </div>
+            </div>
+            </center>
+            <input type="hidden" name="id" value="<%=@product.id %>">
+          </form>
+      </div>
+ 
+     
+
+
+
+
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
